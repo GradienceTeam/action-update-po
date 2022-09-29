@@ -63,7 +63,7 @@ echo "🔨 Generating PO files"
 
 cd $PO_DIR
 for f in *.po; do
-	msgmerge -vU f $POT_FILE
+	msgmerge -vU $f $POT_FILE
 done
 
 cd $GITHUB_WORKSPACE
