@@ -1,0 +1,31 @@
+name: 'Update PO'
+description: 'Update PO files'
+author: 'GradienceTeam'
+inputs:
+  destination_path:
+    description: 'Destination path to save generated PO files'
+    default: "po"
+    required: false
+  po_dir:
+    description: 'Directory where to look for .po file'
+    default: "po"
+    required: false
+  pot_file:
+    description: 'POT file to use'
+    default: "messages.pot"
+    required: false
+  author:
+    default: "github-actions[bot]"
+    required: false
+  author_email:
+    default: "41898282+github-actions[bot]@users.noreply.github.com"
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.destination_path }}
+    - ${{ inputs.po_dir }}
+branding:
+  icon: book-open
+  color: red
