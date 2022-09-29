@@ -2,7 +2,7 @@
 FROM alpine:latest
 
 USER root
-RUN apk add --no-cache git bash
+RUN apk add --no-cache git bash gettext
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
